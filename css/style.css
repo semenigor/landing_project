@@ -1,0 +1,455 @@
+/* Основні стилі */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер для вирівнювання контенту */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Стилі для шапки сайту */
+header {
+  background-color: #2a2a2a;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header h1 {
+  padding-top: 80px; /* Висота меню + запас */
+
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+/* Базові стилі навігації */
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Логотип */
+.logo img {
+  height: 50px;
+}
+
+/* Контейнер для навігації */
+.nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Базові стилі меню */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #fdd835;
+  color: #000;
+  border-radius: 5px;
+}
+
+/* Стилі для бургер-меню */
+.burger-menu {
+  display: none; /* Ховаємо на великих екранах */
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Адаптація для телефонів */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    display: none; /* Ховаємо стандартне меню */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links li {
+    display: block;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .burger-menu {
+    display: block; /* Відображаємо бургер-меню */
+  }
+}
+
+/* Секції */
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Секція "Про нас" */
+#about {
+  background: url("/images/tutylka.jpeg") no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#about p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Галерея */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Футер */
+footer {
+  background-color: #2a2a2a;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Секція "Чому саме ми?" */
+#why-us {
+  background: url("/images/fire.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#why-us h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.feature img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+}
+/* Секція "Вакансії" */
+#vacancies {
+  background: url("/images/vacancies-bg.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#vacancies h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.vacancy-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.vacancy {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.vacancy h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.vacancy p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.apply-btn {
+  background: #fdd835;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background: #ffeb3b;
+}
+
+/* Соціальні мережі */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.social-links a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a img:hover {
+  transform: scale(1.1);
+}
+.contact-info a {
+  color: #fdd835;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #fff200;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
+}
+#scrollTopBtn {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Стилі для модального вікна */
+.modal-content label {
+  display: block; /* Робимо кожну назву на окремому рядку */
+  font-weight: bold; /* Робимо текст жирним */
+  margin-top: 10px; /* Додаємо відступ зверху */
+  text-align: left; /* Вирівнюємо текст ліворуч */
+}
+
+/* Стилі для модального вікна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #6b8e23; /* Хакі */
+  color: white; /* Білий текст для контрасту */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Стилі для заголовка модального вікна */
+.modal-content h2 {
+  color: #ffd700; /* Жовтий колір заголовка (акцент) */
+}
+
+/* Стилі для полів вводу */
+.modal-content input,
+.modal-content textarea {
+  background-color: #556b2f; /* Темний хакі */
+  color: white;
+  border: 1px solid #ffd700; /* Жовта рамка */
+}
+
+/* Стилі для кнопки */
+.send-btn {
+  background: #ffd700; /* Жовтий */
+  color: #000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.send-btn:hover {
+  background: #e0c200;
+}
+
+/* Поля вводу займають майже всю ширину модального вікна */
+.modal-content input,
+.modal-content textarea {
+  width: 95%; /* Робимо ширину майже на всю ширину вікна */
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #556b2f; /* Темний хакі */
+  color: white;
+  border: 1px solid #ffd700; /* Жовта рамка */
+  border-radius: 5px;
+  font-size: 16px;
+  display: block; /* Щоб не було зайвих відступів */
+  text-align: left;
+}
+
+/* При фокусі поле підсвічується */
+.modal-content input:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #e0c200;
+  background-color: #667f3c;
+}
