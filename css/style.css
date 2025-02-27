@@ -165,6 +165,10 @@ nav {
 
 /* Галерея */
 .gallery {
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
@@ -188,6 +192,11 @@ nav {
 
 /* Футер */
 footer {
+  background: url("/images/fire.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+
   background-color: #2a2a2a;
   padding: 15px 0;
   text-align: center;
@@ -258,7 +267,7 @@ footer p {
 }
 /* Секція "Вакансії" */
 #vacancies {
-  background: url("/images/vacancies-bg.jpg") no-repeat center center/cover;
+  background: url("/images/mu.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -333,6 +342,14 @@ footer p {
 .social-links a img:hover {
   transform: scale(1.1);
 }
+
+.contact {
+  background: url("/images/fire.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
 .contact-info a {
   color: #fdd835;
   text-decoration: none;
