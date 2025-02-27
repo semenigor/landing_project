@@ -46,13 +46,16 @@ document.addEventListener("DOMContentLoaded", function() {
     scrollTopButton.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
 
     // Відображення кнопки при прокрутці вниз
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 300) {
-            scrollTopButton.style.display = "block";
-        } else {
-            scrollTopButton.style.display = "none";
-        }
-    });
+window.addEventListener("scroll", function () {
+    var scrollTopButton = document.getElementById("scrollTopBtn");
+    if (!scrollTopButton) return; // Перевіряємо, чи кнопка існує
+
+    if (window.scrollY > 300) {
+        scrollTopButton.classList.remove("hidden");
+    } else {
+        scrollTopButton.classList.add("hidden");
+    }
+});
 
     // Обробник натискання на кнопку
     scrollTopButton.addEventListener("click", function() {
@@ -65,12 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function toggleMenu() {
     var navContainer = document.querySelector(".nav-container");
-    if (navContainer.style.display === "flex") {
-        navContainer.style.display = "none";
-    } else {
-        navContainer.style.display = "flex";
-    }
+    navContainer.classList.toggle("active");
 }
+
+
 document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", function () {
         var navContainer = document.querySelector(".nav-container");
@@ -79,7 +80,11 @@ document.querySelectorAll(".nav-links a").forEach(link => {
         }
     });
 });
+
 window.addEventListener("scroll", function () {
+    var scrollTopButton = document.getElementById("scrollTopBtn");
+    if (!scrollTopButton) return; // Перевіряємо, чи кнопка існує
+
     if (window.scrollY > 300) {
         scrollTopButton.classList.remove("hidden");
     } else {
@@ -87,7 +92,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// Отримуємо всі кнопки "Подати заявку"
+// Отримуємо всі кнопки "Подати заявку" і додаємо обробник події
 document.querySelectorAll(".apply-btn").forEach(button => {
     button.addEventListener("click", function () {
         openModal();
@@ -96,26 +101,37 @@ document.querySelectorAll(".apply-btn").forEach(button => {
 
 // Функція відкриття модального вікна
 function openModal() {
-    document.getElementById("applicationModal").style.display = "flex";
+    var modal = document.getElementById("applicationModal");
+    if (modal) {
+        modal.style.display = "flex";
+    } else {
+        console.error("Модальне вікно не знайдено!");
+    }
 }
 
 // Функція закриття модального вікна
 function closeModal() {
-    document.getElementById("applicationModal").style.display = "none";
-    clearForm(); // Очищаємо поля при закритті
+    var modal = document.getElementById("applicationModal");
+    if (modal) {
+        modal.style.display = "none";
+        clearForm(); // Очищуємо форму при закритті
+    }
 }
 
 // Закриття при кліку поза вікном
-window.onclick = function(event) {
+window.addEventListener("click", function(event) {
     var modal = document.getElementById("applicationModal");
     if (event.target === modal) {
         closeModal();
     }
-};
+});
 
 // Функція очищення форми
 function clearForm() {
-    document.getElementById("applicationForm").reset();
+    var form = document.getElementById("applicationForm");
+    if (form) {
+        form.reset();
+    }
 }
 
 // Обробка відправки форми
