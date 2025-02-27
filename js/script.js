@@ -144,3 +144,12 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
     // Закриваємо модальне вікно
     closeModal();
 });
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function () {
+        var navContainer = document.querySelector(".nav-container");
+        if (window.innerWidth < 768) {
+            navContainer.style.display = "none";
+        }
+    });
+});
