@@ -87,7 +87,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// Отримуємо всі кнопки "Подати заявку"
+// Отримуємо всі кнопки "Подати заявку" і додаємо обробник події
 document.querySelectorAll(".apply-btn").forEach(button => {
     button.addEventListener("click", function () {
         openModal();
@@ -96,26 +96,35 @@ document.querySelectorAll(".apply-btn").forEach(button => {
 
 // Функція відкриття модального вікна
 function openModal() {
-    document.getElementById("applicationModal").style.display = "flex";
+    var modal = document.getElementById("applicationModal");
+    if (modal) {
+        modal.style.display = "flex";
+    }
 }
 
 // Функція закриття модального вікна
 function closeModal() {
-    document.getElementById("applicationModal").style.display = "none";
-    clearForm(); // Очищаємо поля при закритті
+    var modal = document.getElementById("applicationModal");
+    if (modal) {
+        modal.style.display = "none";
+        clearForm(); // Очищуємо форму при закритті
+    }
 }
 
 // Закриття при кліку поза вікном
-window.onclick = function(event) {
+window.addEventListener("click", function(event) {
     var modal = document.getElementById("applicationModal");
     if (event.target === modal) {
         closeModal();
     }
-};
+});
 
 // Функція очищення форми
 function clearForm() {
-    document.getElementById("applicationForm").reset();
+    var form = document.getElementById("applicationForm");
+    if (form) {
+        form.reset();
+    }
 }
 
 // Обробка відправки форми
