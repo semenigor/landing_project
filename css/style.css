@@ -147,7 +147,7 @@ nav {
 
 /* Секція "Про нас" */
 #about {
-  background: url("/images/tutylka.jpeg") no-repeat center center/cover;
+  background: url("images/tutylka.jpeg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -201,7 +201,7 @@ nav {
 
 /* Футер */
 footer {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -228,7 +228,7 @@ footer p {
 
 /* Секція "Чому саме ми?" */
 #why-us {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -276,7 +276,7 @@ footer p {
 }
 /* Секція "Вакансії" */
 #vacancies {
-  background: url("/images/sonyahy.jpg") no-repeat center center/cover;
+  background: url("images/sonyahy.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -353,7 +353,7 @@ footer p {
 }
 
 .contact {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
