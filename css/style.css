@@ -179,8 +179,8 @@ nav {
 
 .gallery img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 250px; /* Фіксована висота */
+  object-fit: cover; /* Заповнює контейнер, зберігаючи пропорції */
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
