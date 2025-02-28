@@ -33,7 +33,7 @@ nav {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Логотип ліворуч, бургер-меню праворуч */
   padding: 15px 30px;
   position: fixed;
   width: 100%;
@@ -87,6 +87,7 @@ nav {
   font-size: 30px;
   color: white;
   cursor: pointer;
+  z-index: 1001; /* Щоб бургер-меню було поверх інших елементів */
 }
 
 /* Адаптація для телефонів */
@@ -100,6 +101,7 @@ nav {
     background: rgba(0, 0, 0, 0.9);
     text-align: center;
     padding: 10px 0;
+    z-index: 999; /* Щоб меню було поверх інших елементів */
   }
 
   .nav-links {
@@ -177,7 +179,7 @@ nav {
 
 .gallery img {
   width: 100%;
-  height: 250px;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -405,6 +407,7 @@ footer p {
   max-width: 400px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative; /* Щоб кнопка закриття була всередині контенту */
 }
 
 .close {
@@ -413,6 +416,11 @@ footer p {
   top: 10px;
   font-size: 24px;
   cursor: pointer;
+  color: white;
+}
+
+.close:hover {
+  color: #ff0000; /* Зміна кольору при наведенні */
 }
 
 /* Стилі для полів вводу в модальному вікні */
