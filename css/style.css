@@ -137,7 +137,7 @@ nav {
 
 /* Секція "Про нас" */
 #about {
-  background: url("/images/tutylka.jpeg") no-repeat center center/cover;
+  background: url("../images/tutylka.jpeg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
