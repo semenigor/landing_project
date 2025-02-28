@@ -23,7 +23,6 @@ header {
 
 header h1 {
   padding-top: 80px; /* Висота меню + запас */
-
   margin: 0;
   font-size: 28px;
   text-transform: uppercase;
@@ -82,15 +81,6 @@ nav {
   border-radius: 5px;
 }
 
-.nav-container {
-  display: none;
-}
-
-.nav-container.active {
-  display: flex;
-  flex-direction: column;
-}
-
 /* Стилі для бургер-меню */
 .burger-menu {
   display: none; /* Ховаємо на великих екранах */
@@ -147,7 +137,7 @@ nav {
 
 /* Секція "Про нас" */
 #about {
-  background: url("images/tutylka.jpeg") no-repeat center center/cover;
+  background: url("/images/tutylka.jpeg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -177,7 +167,6 @@ nav {
   color: white;
   padding: 80px 20px;
   text-align: center;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
@@ -201,13 +190,9 @@ nav {
 
 /* Футер */
 footer {
-  background: url("images/fire.jpg") no-repeat center center/cover;
+  background: url("/images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
-  text-align: center;
-
-  background-color: #2a2a2a;
-  padding: 15px 0;
   text-align: center;
   margin-top: 30px;
 }
@@ -217,6 +202,7 @@ footer p {
   font-size: 14px;
 }
 
+/* Стилі для Google карти */
 .map-container {
   width: 100%;
   max-width: 800px;
@@ -228,7 +214,7 @@ footer p {
 
 /* Секція "Чому саме ми?" */
 #why-us {
-  background: url("images/fire.jpg") no-repeat center center/cover;
+  background: url("/images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -274,9 +260,10 @@ footer p {
 .feature p {
   font-size: 16px;
 }
+
 /* Секція "Вакансії" */
 #vacancies {
-  background: url("images/sonyahy.jpg") no-repeat center center/cover;
+  background: url("/images/sonyahy.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -352,8 +339,9 @@ footer p {
   transform: scale(1.1);
 }
 
+/* Стилі для контактної секції */
 .contact {
-  background: url("images/fire.jpg") no-repeat center center/cover;
+  background: url("/images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -371,26 +359,27 @@ footer p {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-  .logo img {
-    height: 40px;
-  }
-}
+/* Стилі для кнопки "Нагору" */
 #scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #fdd835;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 #scrollTopBtn.hidden {
   opacity: 0;
   transform: translateY(20px);
-}
-
-/* Стилі для модального вікна */
-.modal-content label {
-  display: block; /* Робимо кожну назву на окремому рядку */
-  font-weight: bold; /* Робимо текст жирним */
-  margin-top: 10px; /* Додаємо відступ зверху */
-  text-align: left; /* Вирівнюємо текст ліворуч */
 }
 
 /* Стилі для модального вікна */
@@ -403,14 +392,13 @@ footer p {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .modal-content {
-  background-color: #6b8e23; /* Хакі */
-  color: white; /* Білий текст для контрасту */
+  background-color: #6b8e23;
+  color: white;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
@@ -427,22 +415,31 @@ footer p {
   cursor: pointer;
 }
 
-/* Стилі для заголовка модального вікна */
-.modal-content h2 {
-  color: #ffd700; /* Жовтий колір заголовка (акцент) */
-}
-
-/* Стилі для полів вводу */
+/* Стилі для полів вводу в модальному вікні */
 .modal-content input,
 .modal-content textarea {
-  background-color: #556b2f; /* Темний хакі */
+  width: 95%;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #556b2f;
   color: white;
-  border: 1px solid #ffd700; /* Жовта рамка */
+  border: 1px solid #ffd700;
+  border-radius: 5px;
+  font-size: 16px;
+  display: block;
+  text-align: left;
 }
 
-/* Стилі для кнопки */
+.modal-content input:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #e0c200;
+  background-color: #667f3c;
+}
+
+/* Стилі для кнопки відправки форми */
 .send-btn {
-  background: #ffd700; /* Жовтий */
+  background: #ffd700;
   color: #000;
   border: none;
   padding: 10px;
@@ -455,27 +452,4 @@ footer p {
 
 .send-btn:hover {
   background: #e0c200;
-}
-
-/* Поля вводу займають майже всю ширину модального вікна */
-.modal-content input,
-.modal-content textarea {
-  width: 95%; /* Робимо ширину майже на всю ширину вікна */
-  padding: 12px;
-  margin: 8px 0;
-  background-color: #556b2f; /* Темний хакі */
-  color: white;
-  border: 1px solid #ffd700; /* Жовта рамка */
-  border-radius: 5px;
-  font-size: 16px;
-  display: block; /* Щоб не було зайвих відступів */
-  text-align: left;
-}
-
-/* При фокусі поле підсвічується */
-.modal-content input:focus,
-.modal-content textarea:focus {
-  outline: none;
-  border-color: #e0c200;
-  background-color: #667f3c;
 }
