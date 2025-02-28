@@ -26,42 +26,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Додаємо плаваючу кнопку нагору
-    const scrollTopButton = document.createElement("button");
-    scrollTopButton.innerHTML = "⬆";
-    scrollTopButton.id = "scrollTopBtn";
-    document.body.appendChild(scrollTopButton);
+// Додаємо плаваючу кнопку нагору
+const scrollTopButton = document.createElement("button");
+scrollTopButton.innerHTML = "⬆";
+scrollTopButton.id = "scrollTopBtn";
+document.body.appendChild(scrollTopButton);
 
-    // Відображення кнопки при прокрутці вниз
-    window.addEventListener("scroll", function () {
-        const scrollTopButton = document.getElementById("scrollTopBtn");
-        if (!scrollTopButton) return;
+// Відображення кнопки при прокрутці вниз
+window.addEventListener("scroll", function () {
+    const scrollTopButton = document.getElementById("scrollTopBtn");
+    if (!scrollTopButton) return;
 
-        if (window.scrollY > 300) {
-            scrollTopButton.classList.remove("hidden");
-        } else {
-            scrollTopButton.classList.add("hidden");
-        }
-    });
-
-    // Обробник натискання на кнопку "Нагору"
-    scrollTopButton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    // Функція для відкриття/закриття бургер-меню
-    function toggleMenu() {
-        const navContainer = document.querySelector(".nav-container");
-        if (navContainer) {
-            navContainer.classList.toggle("active");
-        } else {
-            console.error("Контейнер навігації не знайдено!");
-        }
+    if (window.scrollY > 300) {
+        scrollTopButton.style.display = "block"; // Показуємо кнопку
+    } else {
+        scrollTopButton.style.display = "none"; // Ховаємо кнопку
     }
+});
 
+// Обробник натискання на кнопку "Нагору"
+scrollTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+    
+// Функція для відкриття/закриття бургер-меню
+function toggleMenu() {
+    const navContainer = document.querySelector(".nav-container");
+    if (navContainer) {
+        navContainer.classList.toggle("active");
+    } else {
+        console.error("Контейнер навігації не знайдено!");
+    }
+}
     // Закриття меню при кліку на посилання на малих екранах
     document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", function () {
