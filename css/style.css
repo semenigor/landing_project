@@ -119,7 +119,7 @@ nav {
   }
 
   .burger-menu {
-    display: block; /* Відображаємо бургер-меню */
+    display: block; /* Відображаємо бургер-меню на малих екранах */
   }
 }
 
@@ -190,7 +190,7 @@ nav {
 
 /* Футер */
 footer {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -214,7 +214,7 @@ footer p {
 
 /* Секція "Чому саме ми?" */
 #why-us {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -263,7 +263,7 @@ footer p {
 
 /* Секція "Вакансії" */
 #vacancies {
-  background: url("/images/sonyahy.jpg") no-repeat center center/cover;
+  background: url("images/sonyahy.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -341,7 +341,7 @@ footer p {
 
 /* Стилі для контактної секції */
 .contact {
-  background: url("/images/fire.jpg") no-repeat center center/cover;
+  background: url("images/fire.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -371,7 +371,7 @@ footer p {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  display: none;
+  display: none; /* Початково ховаємо кнопку */
   font-size: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s ease, transform 0.3s ease;
