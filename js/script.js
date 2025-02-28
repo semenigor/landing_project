@@ -160,3 +160,4 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
     // Закриваємо модальне вікно
     closeModal();
 });
+
