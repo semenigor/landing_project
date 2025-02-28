@@ -26,41 +26,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-// Додаємо плаваючу кнопку нагору
-const scrollTopButton = document.createElement("button");
-scrollTopButton.innerHTML = "⬆";
-scrollTopButton.id = "scrollTopBtn";
-document.body.appendChild(scrollTopButton);
+    // Додаємо плаваючу кнопку нагору
+    const scrollTopButton = document.createElement("button");
+    scrollTopButton.innerHTML = "⬆";
+    scrollTopButton.id = "scrollTopBtn";
+    document.body.appendChild(scrollTopButton);
 
-// Відображення кнопки при прокрутці вниз
-window.addEventListener("scroll", function () {
-    const scrollTopButton = document.getElementById("scrollTopBtn");
-    if (!scrollTopButton) return;
+    // Відображення кнопки при прокрутці вниз
+    window.addEventListener("scroll", function () {
+        const scrollTopButton = document.getElementById("scrollTopBtn");
+        if (!scrollTopButton) return;
 
-    if (window.scrollY > 300) {
-        scrollTopButton.style.display = "block"; // Показуємо кнопку
-    } else {
-        scrollTopButton.style.display = "none"; // Ховаємо кнопку
-    }
-});
-
-// Обробник натискання на кнопку "Нагору"
-scrollTopButton.addEventListener("click", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        if (window.scrollY > 300) {
+            scrollTopButton.style.display = "block"; // Показуємо кнопку
+        } else {
+            scrollTopButton.style.display = "none"; // Ховаємо кнопку
+        }
     });
-});
-    
-// Функція для відкриття/закриття бургер-меню
-function toggleMenu() {
-    const navContainer = document.querySelector(".nav-container");
-    if (navContainer) {
-        navContainer.classList.toggle("active");
-    } else {
-        console.error("Контейнер навігації не знайдено!");
+
+    // Обробник натискання на кнопку "Нагору"
+    scrollTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // Функція для відкриття/закриття бургер-меню
+    function toggleMenu() {
+        const navContainer = document.querySelector(".nav-container");
+        if (navContainer) {
+            if (navContainer.classList.contains("active")) {
+                navContainer.classList.remove("active");
+            } else {
+                navContainer.classList.add("active");
+            }
+        }
     }
-}
+
     // Закриття меню при кліку на посилання на малих екранах
     document.querySelectorAll(".nav-links a").forEach(link => {
         link.addEventListener("click", function () {
@@ -81,39 +84,43 @@ function toggleMenu() {
     // Функція відкриття модального вікна
     function openModal() {
         const modal = document.getElementById("applicationModal");
-        if (modal) {
+        if (modal && modal.style.display !== "flex") {
             modal.style.display = "flex";
-        } else {
-            console.error("Модальне вікно не знайдено!");
         }
     }
 
-    // Функція закриття модального вікна
-    function closeModal() {
-        const modal = document.getElementById("applicationModal");
-        if (modal) {
-            modal.style.display = "none";
-            clearForm(); // Очищуємо форму при закритті
-        }
+// Функція закриття модального вікна
+function closeModal() {
+    const modal = document.getElementById("applicationModal");
+    if (modal) {
+        modal.style.display = "none"; // Приховуємо модальне вікно
+        clearForm(); // Очищуємо форму
+    } else {
+        console.error("Модальне вікно не знайдено!");
     }
+}
 
-    // Закриття модального вікна при кліку поза ним
-    window.addEventListener("click", function (event) {
-        const modal = document.getElementById("applicationModal");
-        if (modal && event.target === modal) {
-            closeModal();
-        }
-    });
+// Додаємо обробник події для кнопки закриття
+document.querySelector(".close").addEventListener("click", function () {
+    closeModal();
+});
+
+// Закриття модального вікна при кліку поза ним
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("applicationModal");
+    if (modal && event.target === modal) {
+        closeModal();
+    }
+});
 
     // Функція очищення форми
     function clearForm() {
         const form = document.getElementById("applicationForm");
         if (form) {
             form.reset();
-        } else {
-            console.error("Форма не знайдена!");
         }
     }
+
 
     // Обробка відправки форми
     const form = document.getElementById("applicationForm");
@@ -125,6 +132,11 @@ function toggleMenu() {
             const email = document.getElementById("email").value;
             const phone = document.getElementById("phone").value;
             const message = document.getElementById("message").value;
+
+            if (!name || !email || !phone || !message) {
+                alert("Будь ласка, заповніть всі поля форми.");
+                return;
+            }
 
             // Формуємо mailto-посилання
             const mailtoLink = "mailto:post_A7075@post.mil.gov.ua"
@@ -143,7 +155,5 @@ function toggleMenu() {
             // Закриваємо модальне вікно
             closeModal();
         });
-    } else {
-        console.error("Форма не знайдена!");
     }
 });
