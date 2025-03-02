@@ -166,7 +166,7 @@ nav {
 
 /* Секція "Обличчя 63 батальйону" */
 #faces {
-  background: url("../images/medali.jpg") no-repeat center center/cover; /* Фонове зображення */
+  background: url("../images/faces.jpg") no-repeat center center/cover; /* Фонове зображення */
   color: white;
   padding: 80px 20px;
   text-align: center;
