@@ -35,6 +35,8 @@ nav {
   align-items: center;
   justify-content: space-between; /* Логотип ліворуч, бургер-меню праворуч */
   padding: 15px 30px;
+    padding-top: 0;
+  padding-bottom: 0;
   position: fixed;
   width: 100%;
   top: 0;
