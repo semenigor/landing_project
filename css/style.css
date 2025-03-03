@@ -139,7 +139,7 @@ nav {
 
 /* Секція "Про нас" */
 #about {
-  background: url("../images/tutylka.jpeg") no-repeat center center/cover;
+  background: url("../images/faces.jpg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -166,7 +166,7 @@ nav {
 
 /* Секція "Обличчя 63 батальйону" */
 #faces {
-  background: url("../images/faces.jpg") no-repeat center center/cover; /* Фонове зображення */
+  background: url("../images/nagorody.jpg") no-repeat center center/cover; /* Фонове зображення */
   color: white;
   padding: 80px 20px;
   text-align: center;
