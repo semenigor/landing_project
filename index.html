@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
     <title>63 Батальйон ТрО</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -15,9 +15,6 @@
           <div class="logo">
             <img src="images/logo.png" alt="Логотип 63 Батальйону ТрО" />
           </div>
-
-          <!-- Бургер-кнопка -->
-          <div class="burger-menu" onclick="toggleMenu()">☰</div>
 
           <div class="nav-container">
             <ul class="nav-links" id="navLinks">
@@ -58,7 +55,7 @@
           <h2>Чому саме ми?</h2>
           <div class="features">
             <div class="feature">
-              <img src="images/icon-experience.png" alt="Досвід" />
+              <img src="../images/icon-experience.png" alt="Досвід" />
               <h3>Досвідчені бійці</h3>
               <p>
                 Наш батальйон складається з професіоналів, які пройшли бойові
@@ -66,7 +63,7 @@
               </p>
             </div>
             <div class="feature">
-              <img src="images/icon-equipment.png" alt="Екіпірування" />
+              <img src="../images/icon-equipment.png" alt="Екіпіровка" />
               <h3>Сучасна екіпіровка</h3>
               <p>
                 Ми забезпечені найкращою технікою та озброєнням, що дозволяє
@@ -74,7 +71,7 @@
               </p>
             </div>
             <div class="feature">
-              <img src="images/icon-support.png" alt="Підтримка" />
+              <img src="../images/icon-support.png" alt="Підтримка" />
               <h3>Сильна підтримка</h3>
               <p>
                 Ми отримуємо підтримку від громадян та волонтерів, що дає нам
@@ -110,8 +107,8 @@
             <div class="vacancy">
               <h3>Медик</h3>
               <p>
-                <strong>Вимоги:</strong> медична освіта або досвід роботи
-                медиком у бойових умовах.
+                <strong>Вимоги:</strong> медична освіта (бажано) або досвід
+                роботи медиком у бойових умовах.
               </p>
               <p>
                 <strong>Обов’язки:</strong> надання першої допомоги, евакуація
@@ -126,11 +123,38 @@
               <h3>Механік-водій</h3>
               <p>
                 <strong>Вимоги:</strong> досвід водіння бронетехніки або
-                вантажного транспорту.
+                вантажного транспорту, готовність вивчати нову техніку
               </p>
               <p>
                 <strong>Обов’язки:</strong> керування технікою, обслуговування
                 машин.
+              </p>
+              <button class="apply-btn" onclick="openModal()">
+                Подати заявку
+              </button>
+            </div>
+            <div class="vacancy">
+              <h3>Оператор БПЛА</h3>
+              <p>
+                <strong>Вимоги:</strong>Навички керування безпілотними апаратами
+                (бажано). Бажання вчитися і працювати
+              </p>
+              <p>
+                <strong>Обов’язки:</strong> керування БПЛА, робота з вибуховими
+                пристроями.
+              </p>
+              <button class="apply-btn" onclick="openModal()">
+                Подати заявку
+              </button>
+            </div>
+            <div class="vacancy">
+              <h3>Розвідник</h3>
+              <p>
+                <strong>Вимоги:</strong> керування транспортними засобами,
+                хороша фізична підготовка, орієнтування на місцевості
+              </p>
+              <p>
+                <strong>Обов’язки:</strong> керування технікою, робота в полі
               </p>
               <button class="apply-btn" onclick="openModal()">
                 Подати заявку
